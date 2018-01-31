@@ -1,0 +1,41 @@
+weight  number_of_items  cost_per_unit  shipping   	$/1g 		$/1g+shipping
+
+170g		1 				4.40 		 15.12      0.02588		0.115
+27g 		21				18.40	   	 44.31      0.03245		0.111
+90g			18				46.40		 87.12      0.02864		0.082
+330g		1 				7.90  		 21.23      0.02394		0.088
+45g 		15 				22.90 		 36.52      0.03392 	0.088
+
+
+======================================
+
+[unit_cost / quantity_in_grams]
+[unit_cost + shipping (total_cost) / total_weight_in_grams]
+
+=========================================
+http://www.micromedexsolutions.com/micromedex2/4.34.0/WebHelp/RED_BOOK/Unit_Price_Calculations.htm
+
+[unit_cost / quantity_in_grams]
+4.40 / 170  		= 2.588 c/g
+18.40 / 27 * 21  	= 3.245 c/g
+46.40 / 90 * 18  	= 2.864 c/g
+7.90 / 330  		= 2.394 c/g
+22.90 / 45 * 15  	= 3.392 c/g
+
+[unit_cost + shipping (total_cost) / total_weight_in_grams]
+4.40 + 15.12 (19.52) / 170  			= 11.5 c/g
+18.40 + 44.31 (62.71) / 27 * 21(567)  	= 11.1 c/g
+46.40 + 87.12 (133.52) / 90 * 18(1620)	= 8.2 c/g
+7.9 + 21.23 (29.13) / 330 				= 8.8 c/g
+22.90 (59.42) / 45 * 15(675) 			= 8.8 c/g
+
+
+Control Unit
+5.00 / 100						= 0.05 c/g
+5.00 + 20.00 (25.00) / 100		= 0.25 c/g
+5.00 + 25.00 (30.00) / 100		= 0.3  c/g
+
+Control Unit 
+[unit_price + shipping (total_cost) / quantity]
+5.00 + 20.00 (25.00) / 100		= 25.0 c/g
+5.00 + 25.00 (30.00) / 100		= 30.0 c/g
