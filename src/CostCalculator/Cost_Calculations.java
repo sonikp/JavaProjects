@@ -13,8 +13,8 @@ public class Cost_Calculations {
 	private double res_cost_per_gram_shipping;
 	
 	// constructors
-	public void Cost_Calculations() {}	// empty constuctor
-	public void Cost_Calculations (double unit_cost, double shipping_cost, double weight_grams, double number_of_items) {
+	public Cost_Calculations() {}	// empty constructor
+	public Cost_Calculations (double unit_cost, double shipping_cost, double weight_grams, double number_of_items) {
 		this.unit_cost = unit_cost;
 		this.shipping_cost = shipping_cost;
 		this.weight_grams = weight_grams;
