@@ -1,29 +1,44 @@
 package CostCalculator;
 
+import java.awt.Point;	// not sure what this is need to investigate
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.text.DecimalFormat;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 
 public class ExpFrame extends JFrame {
 
-  private JButton btnStop  = new JButton("Stop");
-  private JButton btnStart = new JButton("Start");
+  private JButton btnClear  = new JButton("Clear");
+  private JButton btnCalc = new JButton("Calc");
 
-  private JTextField txtA = new JTextField();
-  private JTextField txtB = new JTextField();
-  private JTextField txtC = new JTextField();
-  private JTextField txtD = new JTextField();
+  private JTextField txt_UnitCost = new JTextField();
+  private JTextField txt_Weight = new JTextField();
+  private JTextField txt_ItemCount = new JTextField();
+  private JTextField txt_ShippingCost = new JTextField();
+  private JTextField txt_ResultCostPerUnit = new JTextField();
+  private JTextField txt_ResultCostPerUnitShipping = new JTextField();
 
-  private JLabel lblA = new JLabel("Unit Cost :");
-  private JLabel lblB = new JLabel("Weight :");
-  private JLabel lblC = new JLabel("Item No :");
-  private JLabel lblD = new JLabel("Shipping :");
+  private JLabel lbl_UnitCost = new JLabel("Unit Cost:");
+  private JLabel lbl_Weight = new JLabel("Weight (grams):");
+  private JLabel lbl_ItemCount = new JLabel("No. of Items:");
+  private JLabel lbl_ShippingCost = new JLabel("Shipping Cost:");
+  private JLabel lbl_ResultCostPerUnit = new JLabel("Res: Cost/gram:");
+  private JLabel lbl_ResultCostPerUnitShipping = new JLabel("Res: Cost/gram w.Shipping:");
+  
+  // create output decimal formatting
+  DecimalFormat df = new DecimalFormat("#,###,##0.0000");
 
   public ExpFrame(){
     setTitle("CostCalculator");
-    setSize(400,200);
+    setSize(400,300);
     setLocation(new Point(300,200));
     setLayout(null);    
     setResizable(false);
@@ -33,32 +48,41 @@ public class ExpFrame extends JFrame {
   }
 
   private void initComponent(){
-    btnStop.setBounds(300,130, 80,25);
-    btnStart.setBounds(300,100, 80,25);
+    
+    btnCalc.setBounds(230,230, 80,25);
+    btnClear.setBounds(300,230, 80,25);
 
-    txtA.setBounds(100,10,100,20);
-    txtB.setBounds(100,35,100,20);
-    txtC.setBounds(100,60,100,20);
-    txtD.setBounds(100,85,100,20);
+    txt_UnitCost.setBounds(200,10,150,20);
+    txt_Weight.setBounds(200,35,150,20);
+    txt_ItemCount.setBounds(200,60,150,20);
+    txt_ShippingCost.setBounds(200,85,150,20);
+    txt_ResultCostPerUnit.setBounds(200,110,150,20);
+    txt_ResultCostPerUnitShipping.setBounds(200,135,150,20);
 
-    lblA.setBounds(20,10,100,20);
-    lblB.setBounds(20,35,100,20);
-    lblC.setBounds(20,60,100,20);
-    lblD.setBounds(20,85,100,20);
+    lbl_UnitCost.setBounds(20,10,100,20);
+    lbl_Weight.setBounds(20,35,150,20);
+    lbl_ItemCount.setBounds(20,60,100,20);
+    lbl_ShippingCost.setBounds(20,85,100,20);
+    lbl_ResultCostPerUnit.setBounds(20,110,100,20);
+    lbl_ResultCostPerUnitShipping.setBounds(20,135,180,20);
 
 
-    add(btnStop);
-    add(btnStart);
+    add(btnClear);
+    add(btnCalc);
 
-    add(lblA);
-    add(lblB);
-    add(lblC);
-    add(lblD);
+    add(lbl_UnitCost);
+    add(lbl_Weight);
+    add(lbl_ItemCount);
+    add(lbl_ShippingCost);
+    add(lbl_ResultCostPerUnit);
+    add(lbl_ResultCostPerUnitShipping);
 
-    add(txtA);
-    add(txtB);
-    add(txtC);
-    add(txtD);
+    add(txt_UnitCost);
+    add(txt_Weight);
+    add(txt_ItemCount);
+    add(txt_ShippingCost);
+    add(txt_ResultCostPerUnit);
+    add(txt_ResultCostPerUnitShipping);
   }
 
   private void initEvent(){
@@ -69,30 +93,45 @@ public class ExpFrame extends JFrame {
       }
     });
 
-    btnStop.addActionListener(new ActionListener() {
+    btnClear.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        btnTutupClick(e);
+        btn_Exit(e);
       }
     });
 
-    btnStart.addActionListener(new ActionListener() {
+    btnCalc.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        btnTambahClick(e);
+        btn_Calc(e);
       }
     });
   }
   
-  private void btnTutupClick(ActionEvent evt){
-    System.exit(0);
+  private void btn_Exit(ActionEvent evt){
+//    System.exit(0);
+    txt_UnitCost.setText("");
+    txt_Weight.setText("");
+    txt_ItemCount.setText("");
+    txt_ShippingCost.setText("");
+    txt_ResultCostPerUnit.setText("");
+    txt_ResultCostPerUnitShipping.setText("");
+    
   }
   
-  private void btnTambahClick(ActionEvent evt){
-    Integer x,y,z;
+  private void btn_Calc(ActionEvent evt){
+    Double a,b,c,d,y,z;
     try{
-      x = Integer.parseInt(txtA.getText());
-      y = Integer.parseInt(txtB.getText());
-      z = x + y;
-      txtC.setText(z.toString());
+        a = Double.parseDouble(txt_UnitCost.getText());
+        b = Double.parseDouble(txt_Weight.getText());
+        c = Double.parseDouble(txt_ItemCount.getText());
+        d = Double.parseDouble(txt_ShippingCost.getText());
+        
+        // calculations
+        y = a / (b * c);		// how much is the cost for the smallest weight unit
+        z = (a + d) / (b * c);	// same as above this time with shipping included
+        
+        // formatting to 4 decimal places
+        txt_ResultCostPerUnit.setText(df.format(y));
+        txt_ResultCostPerUnitShipping.setText(df.format(z));
 
     }catch(Exception e){
       System.out.println(e);
