@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class ExpFrame extends JFrame {
+public class ExpFrame_bkup_panel extends JFrame {
 
 	private JButton btnClear = new JButton("Clear");
 	private JButton btnCalc = new JButton("Calc");
@@ -35,7 +35,7 @@ public class ExpFrame extends JFrame {
 	// create output decimal formatting
 	DecimalFormat df = new DecimalFormat("#,###,##0.0000");
 
-	public ExpFrame() {
+	public ExpFrame_bkup_panel() {
 		setTitle("CostCalculator");
 		setSize(500, 400);
 		setLocation(new Point(300, 200));
