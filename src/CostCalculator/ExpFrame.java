@@ -11,9 +11,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class ExpFrame extends JFrame {
+	
+	
+	private JTextArea txt_TextArea = new JTextArea();
+	private JScrollPane scrollPane = new JScrollPane();
 
 	private JButton btnClear = new JButton("Clear");
 	private JButton btnCalc = new JButton("Calc");
@@ -48,8 +54,10 @@ public class ExpFrame extends JFrame {
 
 	private void initComponent() {
 
-		btnCalc.setBounds(230, 165, 80, 25);
-		btnClear.setBounds(300, 165, 80, 25);
+		btnCalc.setBounds(230, 345, 80, 25);
+		btnClear.setBounds(300, 345, 80, 25);
+		
+		txt_TextArea.setBounds(20, 170, 460, 165);
 
 		txt_UnitCost.setBounds(200, 10, 150, 20);
 		txt_Weight.setBounds(200, 35, 150, 20);
@@ -67,6 +75,7 @@ public class ExpFrame extends JFrame {
 
 		add(btnClear);
 		add(btnCalc);
+		add(txt_TextArea);
 
 		add(lbl_UnitCost);
 		add(lbl_Weight);
@@ -112,11 +121,13 @@ public class ExpFrame extends JFrame {
 		txt_ShippingCost.setText("");
 		txt_ResultCostPerUnit.setText("");
 		txt_ResultCostPerUnitShipping.setText("");
+		txt_TextArea.setText("");
 
 	}
 
 	private void btn_Calc(ActionEvent evt) {
 		Double a, b, c, d, y, z;
+		String newLine = "\n";
 		try {
 			a = Double.parseDouble(txt_UnitCost.getText());
 			b = Double.parseDouble(txt_Weight.getText());
@@ -132,6 +143,8 @@ public class ExpFrame extends JFrame {
 			// formatting to 4 decimal places
 			txt_ResultCostPerUnit.setText(df.format(y));
 			txt_ResultCostPerUnitShipping.setText(df.format(z));
+			txt_TextArea.append(df.format(y)+newLine);
+			txt_TextArea.append(df.format(z)+newLine);
 
 		} catch (Exception e) {
 			System.out.println(e);

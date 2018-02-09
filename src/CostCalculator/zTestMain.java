@@ -16,9 +16,11 @@ Research:
 		http://www.java2s.com/Tutorial/Java/0240__Swing/Catalog0240__Swing.htm
 		http://www.codejava.net/java-se/swing/jpanel-basic-tutorial-and-examples
 		http://www.javaguicodexample.com/javadesktopguimysql3.html
-		http://www.codecommit.com/blog/java/techniques-of-java-ui-development
+	->	http://www.codecommit.com/blog/java/techniques-of-java-ui-development
 		https://examples.javacodegeeks.com/desktop-java/ide/eclipse/eclipse-window-builder-tutorial-gui-creation/
 		http://zetcode.com/tutorials/javaswingtutorial/
+		
+		http://metawidget.sourceforge.net/doc/reference/en/html/ch01.html
 		
 
 
