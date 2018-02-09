@@ -75,6 +75,14 @@ public class zTestJTable extends JFrame{
         JTable table = new JTable(model);		// replaces below
         
         /*
+        aligning data in center:
+        https://coderanch.com/t/339409/java/Centering-Text-JTable
+        https://stackoverflow.com/questions/7433602/how-to-center-in-jtable-cell-a-value/7433758
+        
+        
+        */
+        
+        /*
         OLD
         //create table with data
         JTable table = new JTable(data, columns);
