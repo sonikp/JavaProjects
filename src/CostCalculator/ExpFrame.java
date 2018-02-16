@@ -21,7 +21,7 @@ public class ExpFrame extends JFrame {
 	
 	
 	private JTextArea txt_TextArea = new JTextArea();
-	private JScrollPane scrollPane = new JScrollPane(txt_TextArea);
+	private JScrollPane scrollPane = new JScrollPane(txt_TextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
 	private JButton btnClear = new JButton("Clear");
 	private JButton btnCalc = new JButton("Calc");
@@ -78,6 +78,8 @@ public class ExpFrame extends JFrame {
 		add(btnClear);
 		add(btnCalc);
 		add(txt_TextArea);		// cant add scrollPane
+//		add(scrollPane);
+
 
 		add(lbl_UnitCost);
 		add(lbl_Weight);
