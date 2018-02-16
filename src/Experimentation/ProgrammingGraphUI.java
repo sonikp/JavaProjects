@@ -64,7 +64,7 @@ public class ProgrammingGraphUI extends JFrame  {
         //Create and set up the window.
         JFrame frame = new JFrame("TopLevelDemo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("......"); // "super" JFrame sets title
+        frame.setTitle("Demo Window"); // "super" JFrame sets title
         frame.setSize(500, 500); // "super" JFrame sets initial size
         frame.setLocationRelativeTo(null);
 
@@ -82,7 +82,7 @@ public class ProgrammingGraphUI extends JFrame  {
 
         //Set the menu bar and add the label to the content pane.
         frame.setJMenuBar(greenMenuBar);
-//        frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
+        frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
         frame.add(greenMenuBar);
         frame.add(yellowLabel, BorderLayout.CENTER);
 
