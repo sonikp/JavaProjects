@@ -17,9 +17,11 @@ import javax.swing.JTextField;
 
 public class ExpFrame extends JFrame {
 	
+	// adding JTable
+	
 	
 	private JTextArea txt_TextArea = new JTextArea();
-	private JScrollPane scrollPane = new JScrollPane();
+	private JScrollPane scrollPane = new JScrollPane(txt_TextArea);
 
 	private JButton btnClear = new JButton("Clear");
 	private JButton btnCalc = new JButton("Calc");
@@ -75,7 +77,7 @@ public class ExpFrame extends JFrame {
 
 		add(btnClear);
 		add(btnCalc);
-		add(txt_TextArea);
+		add(txt_TextArea);		// cant add scrollPane
 
 		add(lbl_UnitCost);
 		add(lbl_Weight);

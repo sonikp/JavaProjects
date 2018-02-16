@@ -55,6 +55,15 @@ public class zTestJTable extends JFrame{
             {3, "Zorro", 60.0, true },
         };
         
+        
+        /*
+        // ----Start: this was the original data format in columns -----
+        JTable table = new JTable(data, columns);		//create table with data
+        // ----End: this was the original data format in columns -----
+        */
+        
+        
+        // ----Start: this was additional changes for formatting data in columns -----
         final Class[] columnClass = new Class[] {
                 Integer.class, String.class, Double.class, Boolean.class
          };
@@ -73,6 +82,8 @@ public class zTestJTable extends JFrame{
 		};
         
         JTable table = new JTable(model);		// replaces below
+        // ----End: this was additional changes for formatting data in columns -----
+        
         
         /*
         aligning data in center:
@@ -82,11 +93,7 @@ public class zTestJTable extends JFrame{
         
         */
         
-        /*
-        OLD
-        //create table with data
-        JTable table = new JTable(data, columns);
-        */
+
         
         
         //add the table to the frame
