@@ -1,5 +1,7 @@
 package CostCalculator;
 
+
+
 import java.awt.Point; // not sure what this is need to investigate
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,22 +14,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.table.AbstractTableModel;
 
-public class ExpFrame extends JFrame {
+public class ExpFrame_ORIG extends JFrame {
 	
 	// adding JTable
-	JTable dataTable = new JTable(new MyTableModel());
-//	dataTable.setPreferredScrollableViewportSize(new Dimension(500, 70));
-//	dataTable.setFillsViewportHeight(true);
-//	dataTable.setAutoCreateRowSorter(true);
 	
 	
 	private JTextArea txt_TextArea = new JTextArea();
-	private JScrollPane scrollPane = new JScrollPane(dataTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+	private JScrollPane scrollPane = new JScrollPane(txt_TextArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
 	private JButton btnClear = new JButton("Clear");
 	private JButton btnCalc = new JButton("Calc");
@@ -49,7 +45,7 @@ public class ExpFrame extends JFrame {
 	// create output decimal formatting
 	DecimalFormat df = new DecimalFormat("#,###,##0.0000");
 
-	public ExpFrame() {
+	public ExpFrame_ORIG() {
 		setTitle("CostCalculator");
 		setSize(500, 400);
 		setLocation(new Point(300, 200));
@@ -57,7 +53,7 @@ public class ExpFrame extends JFrame {
 		setResizable(false);
 
 		initComponent();
-//		initEvent();
+		initEvent();
 	}
 
 	private void initComponent() {
@@ -66,7 +62,6 @@ public class ExpFrame extends JFrame {
 		btnClear.setBounds(300, 345, 80, 25);
 		
 		txt_TextArea.setBounds(20, 170, 460, 165);
-		scrollPane.setBounds(20, 170, 460, 165);
 
 		txt_UnitCost.setBounds(200, 10, 150, 20);
 		txt_Weight.setBounds(200, 35, 150, 20);
@@ -84,8 +79,8 @@ public class ExpFrame extends JFrame {
 
 		add(btnClear);
 		add(btnCalc);
-//		add(txt_TextArea);		// cant add scrollPane
-		add(scrollPane);
+		add(txt_TextArea);		// cant add scrollPane
+//		add(scrollPane);
 
 
 		add(lbl_UnitCost);
@@ -101,57 +96,6 @@ public class ExpFrame extends JFrame {
 		add(txt_ShippingCost);
 		add(txt_ResultCostPerUnit);
 		add(txt_ResultCostPerUnitShipping);
-	}
-	
-	class MyTableModel extends AbstractTableModel {
-        private String[] columnNames = {"Unit Cost",
-                                        "Weight (grams)",
-                                        "No. of Items",
-                                        "Shipping Costs",
-                                        "Rating"};
-        private Object[][] data = {
-	    {"4.40", "170g",
-	     "1", new Integer(5), new Boolean(false)},
-	    {"18.40", "27g",
-	     "21", new Integer(3), new Boolean(true)},
-	    {"46.40", "90g",
-	     "18", new Integer(2), new Boolean(false)},
-	    {"7.90", "330g",
-	     "1", new Integer(20), new Boolean(true)},
-	    {"22.90", "45g",
-	     "15", new Integer(10), new Boolean(false)}
-        };
-        
-        /*
-        private Object[][] data = {
-	    {"4.40", "170g",
-	     "1", new Integer(5), new Boolean(false)},
-	    {"18.40", "27g",
-	     "21", new Integer(3), new Boolean(true)},
-	    {"46.40", "90g",
-	     "18", new Integer(2), new Boolean(false)},
-	    {"7.90", "330g",
-	     "1", new Integer(20), new Boolean(true)},
-	    {"22.90", "45g",
-	     "15", new Integer(10), new Boolean(false)}
-        };
-        */
-        
-        public int getColumnCount() {
-            return columnNames.length;
-        }
-
-        public int getRowCount() {
-            return data.length;
-        }
-
-        public String getColumnName(int col) {
-            return columnNames[col];
-        }
-
-        public Object getValueAt(int row, int col) {
-            return data[row][col];
-        }
 	}
 
 	private void initEvent() {
