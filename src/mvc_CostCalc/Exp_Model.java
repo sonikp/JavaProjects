@@ -37,6 +37,16 @@ public class Exp_Model{
 	public void btn_Calc(){
 		x = a + b + c;
 		System.out.println("x = " + x);
+		
+//		System.out.println("debug:" + view.getValueTextField1());
+//		System.out.println("debug:" + view.getValueTextField2());
+	}
+	
+	
+	public void addNumbersInModel(int num1, int num2) {
+		a = num1;
+		b = num2;
+		x = num1 + num2;
 	}
 
 	

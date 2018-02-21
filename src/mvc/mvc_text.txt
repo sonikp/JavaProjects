@@ -1,0 +1,17 @@
+
+
+
+This one for now:
+http://shulgadim.blogspot.com/2012/01/model-view-controller-mvc-pattern_13.html
+
+
+Notes and research:
+https://stackoverflow.com/questions/16749552/mvc-how-to-pass-data-from-view-to-controller
+http://www.austintek.com/mvc/
+https://codereview.stackexchange.com/questions/93710/model-view-controller
+
+
+
+layout manager of JLABEL/JTEXTField: for file: UI_1_ver1.java
+https://stackoverflow.com/questions/6005258/how-to-align-jlabel-jtextfield-pairs-vertically
+https://stackoverflow.com/questions/21658144/jpanel-components-change-position-automatically/21659516#21659516

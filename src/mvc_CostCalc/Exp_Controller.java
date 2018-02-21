@@ -29,8 +29,15 @@ public class Exp_Controller {
 		view.calcButton().addActionListener(actionListener);
 	}
 
-	private void calculate() {
+	public void calculate() {
 		model.btn_Calc();
+		view.setText(Integer.toString(model.getX()));
+		view.getValueTextField1();
+		
+		System.out.println("debug:" + view.getValueTextField1());
+		System.out.println("debug:" + view.getValueTextField2());
+		
+		model.addNumbersInModel(view.getValueTextField1(), view.getValueTextField2());
 		view.setText(Integer.toString(model.getX()));
 	}
 	

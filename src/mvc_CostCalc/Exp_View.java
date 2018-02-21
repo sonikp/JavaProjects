@@ -123,6 +123,16 @@ public class Exp_View{
 		
 	}
 	
+	public int getValueTextField1() {		// changed method type from String to int
+//		return txt_field1.getText();
+		return Integer.parseInt(txt_field1.getText());
+	}
+	
+	public int getValueTextField2() {
+//		return txt_field2.getText();
+		return Integer.parseInt(txt_field2.getText());
+	}
+	
 
 	
 
@@ -135,6 +145,7 @@ public class Exp_View{
 	public void setText(String text){
 		System.out.println(text);
 		label.setText(text);
+		txt_result1.setText(text);
 	}
 	//--ORIGINAL----------------------------
 	
