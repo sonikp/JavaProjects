@@ -2,15 +2,12 @@ package Experimentation;
 
 // From: https://stackoverflow.com/questions/21658144/jpanel-components-change-position-automatically/21659516#21659516
 
-// This is good, want to base data intake on this and put it into a panel of its own
-
-
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.*;
 
-class Test_jpanel_component {
+class Test_jpanel_component_ORIG {
 
     /**
      * Provides a JPanel with two columns (labels & fields) laid out using
@@ -26,7 +23,9 @@ class Test_jpanel_component {
      * @param addMnemonics Add mnemonic by next available letter in label text.
      * @return JComponent A JPanel with two columns of the components provided.
      */
-    public static JComponent populate_getTwoColumnLayout(JLabel[] labels, JComponent[] fields) {		// removed mnemonic -  ,   boolean addMnemonics
+    public static JComponent getTwoColumnLayout(
+            JLabel[] labels,
+            JComponent[] fields) {		// removed mnemonic -  ,   boolean addMnemonics
         if (labels.length != fields.length) {
             String s = labels.length + " labels supplied for "
                     + fields.length + " fields!";
@@ -101,12 +100,14 @@ class Test_jpanel_component {
      * @param fields The corresponding fields.
      * @return JComponent A JPanel with two columns of the components provided.
      */
-    public static JComponent getTwoColumnLayout(String[] labelStrings,JComponent[] fields) {
+    public static JComponent getTwoColumnLayout(
+            String[] labelStrings,
+            JComponent[] fields) {
         JLabel[] labels = new JLabel[labelStrings.length];
         for (int ii = 0; ii < labels.length; ii++) {
             labels[ii] = new JLabel(labelStrings[ii]);
         }
-        return populate_getTwoColumnLayout(labels, fields);
+        return getTwoColumnLayout(labels, fields);
     }
 
     /**
@@ -167,7 +168,7 @@ class Test_jpanel_component {
 
                 JComponent labelsAndFields = getTwoColumnLayout(labels,components);
                 JComponent orderForm = new JPanel(new BorderLayout(5,5));
-                orderForm.add(new JLabel("Purchasing Details Form", SwingConstants.LEADING), BorderLayout.PAGE_START);
+                orderForm.add(new JLabel("Purchasing Details Form", SwingConstants.CENTER), BorderLayout.PAGE_START);
                 orderForm.add(labelsAndFields, BorderLayout.CENTER);
 
                 JOptionPane.showMessageDialog(null, orderForm);

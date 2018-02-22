@@ -1,5 +1,8 @@
 package Experimentation;
 
+// experiment for creating panels and adding components to panels
+// this could be discarded
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
