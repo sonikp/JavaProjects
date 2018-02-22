@@ -1,0 +1,10 @@
+=====UI Sources for research========
+GroupLayout Tutorials:
+https://docs.oracle.com/javase/tutorial/uiswing/layout/group.html
+
+
+
+
+
+Swing - Working with Layout Manager
+https://docs.oracle.com/javase/8/javafx/layout-tutorial/index.html
