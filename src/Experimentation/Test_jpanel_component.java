@@ -73,7 +73,7 @@ class Test_jpanel_component {
         return panel;
     }
     
-    /*
+    /*sdsds
     private final static void addMnemonics(
             JLabel[] labels,
             JComponent[] fields) {
