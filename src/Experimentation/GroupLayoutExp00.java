@@ -32,7 +32,7 @@ public class GroupLayoutExp00 {
 	
 	 public static void main(String[] args) { 
 		 
-	        JFrame frame = new JFrame("GroupLayoutExample");  
+	        JFrame frame = new JFrame("MyGroupLayoutExample");  
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	        frame.setSize(300,300);
 	        
@@ -46,6 +46,8 @@ public class GroupLayoutExp00 {
 	        JTextField tf3 = new JTextField("Please enter number"); 
 	        JLabel jl4 = new JLabel("Shipping Cost:");    
 	        JTextField tf4 = new JTextField("Please enter shipping"); 
+	        JButton findButton = new JButton("Find");
+	        JButton cancelButton = new JButton("Cancel");
 	        
 	        Container panel = frame.getContentPane();  
 	        GroupLayout layout = new GroupLayout(panel);  	  
@@ -56,46 +58,39 @@ public class GroupLayoutExp00 {
 	        /**
 	         * Currently attempting to get the two columns next to
 	         * each other for name and text field
+	         * https://docs.oracle.com/javase/8/docs/api/javax/swing/GroupLayout.html
+	         * https://docs.oracle.com/javase/tutorial/uiswing/layout/group.html
+	         * => https://docs.oracle.com/javase/tutorial/uiswing/layout/groupExample.html
+	         * 
 	         */
 	        
-	      /*
-			// I've messed this up
-			layout.setHorizontalGroup(
-					layout.createSequentialGroup()
-						.addGroup(layout.createParallelGroup()
-			        		.addComponent(jl1)
-			        		.addComponent(jl2)
-			        		.addComponent(jl3)
-			        		.addComponent(jl4))
-		        		.addGroup(layout.createParallelGroup()
-			        		.addComponent(tf1)
-			        		.addComponent(tf2)
-			        		.addComponent(tf3)
-			        		.addComponent(tf4))
-					);
-
-	        		
-	        
-	        layout.setVerticalGroup(
-	        		layout.createSequentialGroup()				//createSequentialGroup()
-		        		.addGroup(layout.createSequentialGroup()
-		        			.addComponent(jl1)
-			        		.addComponent(jl2)
-			        		.addComponent(jl3)
-			        		.addComponent(jl4))
-		        		.addGroup(layout.createSequentialGroup()
-			        			.addComponent(tf1)
-				        		.addComponent(tf2)
-				        		.addComponent(tf3)
-				        		.addComponent(tf4))
-	        		
-
-		        		);
-	      */
 	        
 	        layout.setHorizontalGroup(layout.createSequentialGroup()
+	        		.addComponent(label)
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+	        				.addComponent(textField)
+	        				
+	        				)
+	        			
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING))
+	        		);
+	        
+	        
+	        
+	        layout.setVerticalGroup(layout.createSequentialGroup()
+	        		.addComponent(textField)
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+	        				.addComponent(textField)
+	        				)
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE))
+	        		);
+	        
+	        
+	        /*
+	        // this works===================
+	        layout.setHorizontalGroup(layout.createSequentialGroup()
 	        	    .addComponent(label)
-	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)	//
 	        	        .addComponent(textField)
 	        	        .addGroup(layout.createSequentialGroup()
 	        	            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -105,16 +100,15 @@ public class GroupLayoutExp00 {
 	        	                .addComponent(jl3)
 	        	                .addComponent(jl4))))
 	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-//	        	        .addComponent(findButton)
-//	        	        .addComponent(cancelButton))
+	        	        .addComponent(findButton)
+	        	        .addComponent(cancelButton)
 	        	));
-//	        	layout.linkSize(SwingConstants.HORIZONTAL, findButton, cancelButton);
 
 	        	layout.setVerticalGroup(layout.createSequentialGroup()
 	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 	        	        .addComponent(label)
 	        	        .addComponent(textField)
-//	        	        .addComponent(findButton))
+	        	        .addComponent(findButton))
 	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 	        	        .addGroup(layout.createSequentialGroup()
 	        	            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -123,10 +117,44 @@ public class GroupLayoutExp00 {
 	        	            .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 	        	                .addComponent(jl2)
 	        	                .addComponent(jl4)))
-//	        	        .addComponent(cancelButton))
-	        	)));
+	        	        .addComponent(cancelButton))
+	        	);
+	        	*/
 	      
-	        
+	  	      /*
+				// I've messed this up
+				layout.setHorizontalGroup(
+						layout.createSequentialGroup()
+							.addGroup(layout.createParallelGroup()
+				        		.addComponent(jl1)
+				        		.addComponent(jl2)
+				        		.addComponent(jl3)
+				        		.addComponent(jl4))
+			        		.addGroup(layout.createParallelGroup()
+				        		.addComponent(tf1)
+				        		.addComponent(tf2)
+				        		.addComponent(tf3)
+				        		.addComponent(tf4))
+						);
+
+		        		
+		        
+		        layout.setVerticalGroup(
+		        		layout.createSequentialGroup()				//createSequentialGroup()
+			        		.addGroup(layout.createSequentialGroup()
+			        			.addComponent(jl1)
+				        		.addComponent(jl2)
+				        		.addComponent(jl3)
+				        		.addComponent(jl4))
+			        		.addGroup(layout.createSequentialGroup()
+				        			.addComponent(tf1)
+					        		.addComponent(tf2)
+					        		.addComponent(tf3)
+					        		.addComponent(tf4))
+		        		
+
+			        		);
+		      */
 	        
 	        
 	        
@@ -232,6 +260,7 @@ public class GroupLayoutExp00 {
 	                                .addComponent(tf1));  
 			*/
 	        
+//	        frame.pack();
 	        frame.setLocationRelativeTo(null);
 	        frame.setVisible(true);  
 	    }  
