@@ -63,31 +63,119 @@ public class GroupLayoutExp00 {
 	         * => https://docs.oracle.com/javase/tutorial/uiswing/layout/groupExample.html
 	         * 
 	         */
+	      
+	        
+	        // ===================START: Experiment 2 =========================================================
+	        layout.setHorizontalGroup(layout.createSequentialGroup()
+
+	        		);
+	        
+
+	        
+	        layout.setVerticalGroup(layout.createSequentialGroup()
+
+	        		);
+	        // ===================END: Experiment 2 =========================================================
 	        
 	        
+	        
+	        
+	        
+	        
+	       
+	        // ===================START: Experiment 1 =========================================================
+	        layout.setHorizontalGroup(layout.createSequentialGroup()
+    				.addComponent(label)
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+							.addComponent(jl1)
+							.addComponent(jl2)
+							.addComponent(jl3)
+							.addComponent(jl4)
+	        				)
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+							.addComponent(tf1)
+							.addComponent(tf2)
+							.addComponent(tf3)
+							.addComponent(tf4)
+							
+	        				)
+	        		.addComponent(findButton)
+	        		);
+	        
+
+	        
+	        layout.setVerticalGroup(layout.createSequentialGroup()
+	        		.addComponent(label)
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+    						.addComponent(jl1)
+    						.addComponent(tf1)
+	        				)
+	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+    						.addComponent(jl2)
+    						.addComponent(tf2)
+	        	    		) 
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+    						.addComponent(jl3)
+    						.addComponent(tf3)
+	        				)
+	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+    						.addComponent(jl4)
+    						.addComponent(tf4)
+	        	    		)  
+	        	    .addComponent(findButton)
+	        		);
+	        // ===================END: Experiment 1 =========================================================
+	        
+	        /*
+	        // ===================START: this is one I made =========================================================
 	        layout.setHorizontalGroup(layout.createSequentialGroup()
 	        		.addComponent(label)
 	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 	        				.addComponent(textField)
-	        				
-	        				)
-	        			
+	        				.addGroup(layout.createSequentialGroup()
+	        						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+	        								.addComponent(jl1)
+	        								.addComponent(jl2)
+	        								)
+	        						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+	        								.addComponent(tf1)
+	        								.addComponent(tf2)
+	        								)
+	        						)
+	        				)	        			
 	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING))
+	        			.addComponent(findButton)
+	        			.addComponent(cancelButton)
 	        		);
 	        
 	        
 	        
 	        layout.setVerticalGroup(layout.createSequentialGroup()
-	        		.addComponent(textField)
 	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+	        				.addComponent(label)
 	        				.addComponent(textField)
+	        				.addComponent(findButton)
 	        				)
-	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE))
+	        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+	        				.addGroup(layout.createSequentialGroup()
+	    	        				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+	    	        						.addComponent(jl1)
+	    	        						.addComponent(tf1)
+	    	        						.addComponent(cancelButton)
+	    	        						)
+	    	        				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+	    	        						.addComponent(jl2)
+	    	        						.addComponent(tf2)
+	    	        						)
+	    	        				)
+	        						)
+//	        				.addComponent(cancelButton)
 	        		);
-	        
+	        // ===================END: this is one I made =========================================================
+	        */
 	        
 	        /*
-	        // this works===================
+	        // ===================START: this is the example code =========================================================
 	        layout.setHorizontalGroup(layout.createSequentialGroup()
 	        	    .addComponent(label)
 	        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)	//
@@ -119,148 +207,12 @@ public class GroupLayoutExp00 {
 	        	                .addComponent(jl4)))
 	        	        .addComponent(cancelButton))
 	        	);
+	        	// ===================END: this is the example code =========================================================
 	        	*/
 	      
-	  	      /*
-				// I've messed this up
-				layout.setHorizontalGroup(
-						layout.createSequentialGroup()
-							.addGroup(layout.createParallelGroup()
-				        		.addComponent(jl1)
-				        		.addComponent(jl2)
-				        		.addComponent(jl3)
-				        		.addComponent(jl4))
-			        		.addGroup(layout.createParallelGroup()
-				        		.addComponent(tf1)
-				        		.addComponent(tf2)
-				        		.addComponent(tf3)
-				        		.addComponent(tf4))
-						);
-
-		        		
-		        
-		        layout.setVerticalGroup(
-		        		layout.createSequentialGroup()				//createSequentialGroup()
-			        		.addGroup(layout.createSequentialGroup()
-			        			.addComponent(jl1)
-				        		.addComponent(jl2)
-				        		.addComponent(jl3)
-				        		.addComponent(jl4))
-			        		.addGroup(layout.createSequentialGroup()
-				        			.addComponent(tf1)
-					        		.addComponent(tf2)
-					        		.addComponent(tf3)
-					        		.addComponent(tf4))
-		        		
-
-			        		);
-		      */
+	  	      
 	        
-	        
-	        
-	        
-	        
-	        
-	        
-	        /*
-	        // examples from notes
-			layout.setHorizontalGroup(
-					layout.createSequentialGroup()
-		        		.addComponent(label)
-		        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-		        				.addComponent(textField)
-		        				.addGroup(layout.createSequentialGroup()
-		        						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-					        				.addComponent(jl1)
-							        		.addComponent(jl2))
-        						.addGroup(layout.createSequentialGroup()
-		        						.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-					        				.addComponent(jl3)
-							        		.addComponent(jl4)))
-		        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING))))
-		        		);
-	        		
-	        // https://docs.oracle.com/javase/tutorial/uiswing/layout/groupExample.html
-	        layout.setVerticalGroup(
-	        		layout.createSequentialGroup()
-		        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE))					//createSequentialGroup()
-		        			.addComponent(label)
-		        			.addComponent(textField)
-		        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING))
-		        			.addGroup(layout.createSequentialGroup()
-		        					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-		        							.addComponent(jl1)
-		        							.addComponent(jl2))
-		        					.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-		        							.addComponent(jl3)
-		        							.addComponent(jl4))
-		        					
-		        					)
-		        		);
-	        */
-	        
-	        
-	        
-	        /*
-			// examples from notes
-			layout.setHorizontalGroup(
-					layout.createSequentialGroup()
-		        		.addComponent(jl1)
-		        		.addComponent(jl2)
-		        		.addGroup(layout.createParallelGroup()
-			        		.addComponent(jl3)
-			        		.addComponent(jl4))
-	        		);
-	        
-	        layout.setVerticalGroup(
-	        		layout.createSequentialGroup()
-		        		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)					//createSequentialGroup()
-				        		.addComponent(jl1)
-				        		.addComponent(jl2)
-				        		.addComponent(jl3))
-				        .addComponent(jl4)
-		        		);
-		    */    		
-	        
-	        
-	        /* works good
-
-			groupLayout.setHorizontalGroup(groupLayout.createSequentialGroup()
-	        		.addGroup(groupLayout.createParallelGroup()
-		        		.addComponent(jl1)
-		        		.addComponent(jl2))
-	        		.addGroup(groupLayout.createParallelGroup()				//createParallelGroup()
-	        			.addComponent(tf1)
-	        			.addComponent(tf2))
-	        		);
-	        
-	        groupLayout.setVerticalGroup(groupLayout.createSequentialGroup()
-	        		.addGroup(groupLayout.createSequentialGroup()
-			        		.addComponent(jl1)
-			        		.addComponent(jl2))
-		        		.addGroup(groupLayout.createParallelGroup()
-		        			.addComponent(tf1)
-		        			.addComponent(tf2))
-		        		);
-			
-			
-			*/
-	        
-	        
-	        
-	        /*
-	        groupLayout.setHorizontalGroup(  
-	                    groupLayout.createSequentialGroup()  
-	                                .addComponent(jl1)  
-	                                .addGap(10, 20, 100)  
-	                                .addComponent(tf1));  
-	        groupLayout.setVerticalGroup(  
-	                     groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)  
-	                                .addComponent(jl1)  
-	                                .addComponent(tf1));  
-			*/
-	        
-//	        frame.pack();
+	        frame.pack();
 	        frame.setLocationRelativeTo(null);
 	        frame.setVisible(true);  
 	    }  
