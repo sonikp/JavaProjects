@@ -28,9 +28,42 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class GroupLayoutExp00 {
+public class GroupLayoutExp01 {
 	
 	 public static void main(String[] args) { 
+		 
+		 // clean example
+		 JFrame frame = new JFrame("NextExample01");
+		 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		 frame.setSize(300,300);
+		 
+		 JLabel labelName = new JLabel("Name:");
+		 JLabel labelCompany = new JLabel("Company:");
+		 JLabel labelEmail = new JLabel("Email Address:");
+		 JLabel labelPhone = new JLabel("Phone:");
+		 
+		 JTextField fieldName = new JTextField("please enter name");
+		 JTextField fieldCompany = new JTextField("please enter company name");
+		 JTextField fieldEmail = new JTextField("please enter email address");
+		 JTextField fieldPhone = new JTextField("please enter phone number");
+		 
+		 Container panelTop = frame.getContentPane();
+		 GroupLayout layout = new GroupLayout(panelTop);
+		 panelTop.setLayout(layout);
+		 
+        layout.setHorizontalGroup(layout.createSequentialGroup()
+
+        		);
+        
+
+        
+        layout.setVerticalGroup(layout.createSequentialGroup()
+
+        		);
+		 
+		 
+		 
+		 /*
 		 
 	        JFrame frame = new JFrame("MyGroupLayoutExample");  
 	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
@@ -55,6 +88,9 @@ public class GroupLayoutExp00 {
 	        
 	        layout.setAutoCreateContainerGaps(true);
 	        layout.setAutoCreateGaps(true);
+	        
+	        */
+		 
 	        /**
 	         * Currently attempting to get the two columns next to
 	         * each other for name and text field
